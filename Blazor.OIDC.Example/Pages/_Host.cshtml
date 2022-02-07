@@ -1,0 +1,23 @@
+﻿@page "/{handler?}"
+@namespace Blazor.OIDC.Example.Pages
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+	Layout = null;
+}
+
+@model Blazor.OIDC.Pages._HostModel
+
+@if (User.Identity.IsAuthenticated)
+{
+	<component type="typeof(App)" render-mode="ServerPrerendered" />
+}
+else
+{
+	<h3>You are not logged into this application.</h3>
+
+	<p>
+		@* ReSharper restore CSharpWarnings::CS8602 *@
+		<a href="~/Login">Login</a>
+	</p>
+}

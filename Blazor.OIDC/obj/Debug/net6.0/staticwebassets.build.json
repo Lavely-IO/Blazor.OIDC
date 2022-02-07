@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "WGcrp/kBu68O+Y5x+L62n+TW5zXw1h+XDfGo7T+uvxs=",
+  "Source": "Blazor.OIDC",
+  "BasePath": "_content/Blazor.OIDC",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

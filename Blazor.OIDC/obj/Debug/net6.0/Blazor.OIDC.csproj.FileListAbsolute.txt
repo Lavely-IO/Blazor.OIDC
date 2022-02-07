@@ -1,0 +1,17 @@
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.csproj.AssemblyReference.cache
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.GeneratedMSBuildEditorConfig.editorconfig
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.AssemblyInfoInputs.cache
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.AssemblyInfo.cs
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.csproj.CoreCompileInputs.cache
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.RazorAssemblyInfo.cache
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.RazorAssemblyInfo.cs
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\bin\Debug\net6.0\Blazor.OIDC.deps.json
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\bin\Debug\net6.0\Blazor.OIDC.dll
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\bin\Debug\net6.0\ref\Blazor.OIDC.dll
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\bin\Debug\net6.0\Blazor.OIDC.pdb
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\staticwebassets.build.json
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\staticwebassets.development.json
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\scopedcss\bundle\Blazor.OIDC.styles.css
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.dll
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\ref\Blazor.OIDC.dll
+Z:\.repos\Blazor.OIDC\Blazor.OIDC\obj\Debug\net6.0\Blazor.OIDC.pdb

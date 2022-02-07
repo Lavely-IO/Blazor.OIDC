@@ -1,0 +1,22 @@
+﻿@page "/"
+@inject AuthenticationStateProvider AuthState
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, @Username!</h1>
+
+Welcome to your new, authenticated app.
+
+@code
+{
+	private string Username = "Anonymous User";
+
+	protected override async Task OnInitializedAsync()
+	{
+		var state = await AuthState.GetAuthenticationStateAsync();
+		Username =
+			state.User.GetClaim("name").Value ?? string.Empty;
+
+		await base.OnInitializedAsync();
+	}
+}
