@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Blazor.OIDC</id>
+    <version>1.0.0</version>
+    <authors>josh@lavely.io</authors>
+    <icon>logo.png</icon>
+    <projectUrl>https://github.com/Lavely-IO/Blazor.OIDC</projectUrl>
+    <description>Quickly add OIDC authentication to your BlazorServer Apps.</description>
+    <repository url="https://github.com/Lavely-IO/Blazor.OIDC" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="IdentityModel" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Authentication.OpenIdConnect" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.IdentityModel.Protocols.OpenIdConnect" version="6.15.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.IdentityModel.Tokens.Jwt" version="6.15.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="Z:\.repos\Blazor.OIDC\Blazor.OIDC\bin\Debug\net6.0\Blazor.OIDC.dll" target="lib\net6.0\Blazor.OIDC.dll" />
+    <file src="Z:\.repos\Blazor.OIDC\Blazor.OIDC\bin\Debug\net6.0\Blazor.OIDC.xml" target="lib\net6.0\Blazor.OIDC.xml" />
+    <file src="Z:\.repos\Blazor.OIDC\media\logo.png" target="\logo.png" />
+  </files>
+</package>

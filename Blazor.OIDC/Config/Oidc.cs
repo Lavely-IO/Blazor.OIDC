@@ -1,33 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// ***********************************************************************
+// Assembly         : Blazor.OIDC
+// Author           : joshl
+// Created          : 02-07-2022
+//
+// Last Modified By : joshl
+// Last Modified On : 02-07-2022
+// ***********************************************************************
+// <copyright file="Oidc.cs" company="LavelyIO">
+//     Copyright (c) LavelyIO. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Net.Http.Headers;
+using System.Security.Claims;
+using System.Security.Principal;
+using IdentityModel.Client;
+using Newtonsoft.Json;
 
 namespace Blazor.OIDC.Config
 {
-    using System.Net.Http.Headers;
-    using System.Security.Claims;
-    using System.Security.Principal;
-    using IdentityModel.Client;
-
-    using Newtonsoft.Json;
-
-    internal static class OidcConstants
-    {
-        public const string AdditionalClaims = "claims";
-        public const string ScopeOfflineAccess = "offline_access";
-        public const string ScopeProfile = "profile";
-        public const string ScopeOpenId = "openid";
-        public const string PolicyKey = "policy";
-    }
-
+    /// <summary>
+    /// Class Oidc.
+    /// </summary>
     public static class Oidc
     {
+        /// <summary>
+        /// Gets or sets the well known configuration.
+        /// </summary>
+        /// <value>The well known configuration.</value>
         private static OidcWellKnown WellKnownConfiguration { get; set; }
 
+        /// <summary>
+        /// Gets or sets the JWT ks.
+        /// </summary>
+        /// <value>The JWT ks.</value>
         private static JwtKs JwtKs { get; set; }
 
+        /// <summary>
+        /// Get well known configuration as an asynchronous operation.
+        /// </summary>
+        /// <param name="authority">The authority.</param>
+        /// <returns>A Task&lt;OidcWellKnown&gt; representing the asynchronous operation.</returns>
         public static async Task<OidcWellKnown> GetWellKnownConfigurationAsync(string authority)
         {
             if (WellKnownConfiguration == null)
@@ -50,6 +63,11 @@ namespace Blazor.OIDC.Config
             return WellKnownConfiguration;
         }
 
+        /// <summary>
+        /// Gets the JWT ks.
+        /// </summary>
+        /// <param name="authority">The authority.</param>
+        /// <returns>JwtKs.</returns>
         public static async Task<JwtKs> GetJwtKs(string authority)
         {
             if (JwtKs == null)
@@ -62,18 +80,28 @@ namespace Blazor.OIDC.Config
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var response = await client.GetAsync("").ConfigureAwait(false);
+                var response = await client.GetAsync(string.Empty).ConfigureAwait(false);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    JwtKs = JsonConvert.DeserializeObject<JwtKs>(content);
+                    JwtKs = JsonConvert.DeserializeObject<JwtKs>(content) ?? new JwtKs();
                 }
             }
 
             return JwtKs;
         }
 
-        public static async Task<IIdentity> UpdateTokenClaims(ClaimsIdentity identity, string authority, string clientId, string clientSecret, bool force = false)
+        /// <summary>
+        /// Updates the token claims.
+        /// </summary>
+        /// <param name="identity">The identity.</param>
+        /// <param name="authority">The authority.</param>
+        /// <param name="clientId">The client identifier.</param>
+        /// <param name="clientSecret">The client secret.</param>
+        /// <param name="force">if set to <c>true</c> [force].</param>
+        /// <returns>IIdentity.</returns>
+        public static async Task<IIdentity> UpdateTokenClaims(ClaimsIdentity identity, string authority,
+                                                              string clientId, string clientSecret, bool force = false)
         {
             // always refresh the token, needs refresh token to be present in identity claims
             // or let a timer doe this constantly? https://github.com/aspnet/AspNetCore/issues/16241
@@ -101,51 +129,11 @@ namespace Blazor.OIDC.Config
             }
             else
             {
-                Console.WriteLine($"++++++ TOKEN expires at {exp} in {TimeSpan.FromSeconds(exp - now).Minutes} minutes ++++++++");
+                Console.WriteLine(
+                    $"++++++ TOKEN expires at {exp} in {TimeSpan.FromSeconds(exp - now).Minutes} minutes ++++++++");
             }
 
             return identity;
         }
-    }
-
-    public class OidcWellKnown
-    {
-        public string authorization_endpoint { get; set; }
-        public string token_endpoint { get; set; }
-        public List<string> token_endpoint_auth_methods_supported { get; set; }
-        public string jwks_uri { get; set; }
-        public List<string> response_modes_supported { get; set; }
-        public List<string> subject_types_supported { get; set; }
-        public List<string> id_token_signing_alg_values_supported { get; set; }
-        public bool http_logout_supported { get; set; }
-        public bool frontchannel_logout_supported { get; set; }
-        public string end_session_endpoint { get; set; }
-        public List<string> response_types_supported { get; set; }
-        public List<string> scopes_supported { get; set; }
-        public string issuer { get; set; }
-        public List<string> claims_supported { get; set; }
-        public bool request_uri_parameter_supported { get; set; }
-        public string tenant_region_scope { get; set; }
-        public string cloud_instance_name { get; set; }
-        public string cloud_graph_host_name { get; set; }
-        public string msgraph_host { get; set; }
-        public string rbac_url { get; set; }
-    }
-
-    public class JwtKey
-    {
-        public string kty { get; set; }
-        public string use { get; set; }
-        public string kid { get; set; }
-        public string x5t { get; set; }
-        public string n { get; set; }
-        public string e { get; set; }
-        public List<string> x5c { get; set; }
-        public string issuer { get; set; }
-    }
-
-    public class JwtKs
-    {
-        public List<JwtKey> keys { get; set; }
     }
 }

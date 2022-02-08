@@ -1,0 +1,34 @@
+﻿@inject NavigationManager _navigation
+@namespace Blazor.OIDC.Components
+
+<div class="p-4 mb-3" style="max-width: 85vw; margin: 0 auto; margin-top: 5em;">
+	<div class="row g-2">
+		<div class="col-6" style="min-height: 500px; background-image: url(img/Single-Sign-On-SSO.jpg);background-position: center;background-size: cover;">
+		</div>
+		<div class="col-5">
+			<div class="card-body">
+				<h5 class="card-title">Get Signed In</h5>
+				<p class="card-text">Chose from a below method to begin.</p>
+				<div class="social-login">
+					<a href="/Login" class="btn btn-microsoft d-flex justify-content-center align-items-center" style="margin-top: 1.25rem;">
+						<span class="fab fa-microsoft mr-3" style="margin-right: 1rem;"></span> Login with Microsoft
+					</a>
+					<a href="#" class="disabled btn btn-twitter d-flex justify-content-center align-items-center" style="margin-top: 1.25rem;">
+						<span class="fab fa-github" style="margin-right: 1rem;"></span> Login with Github
+					</a>
+					<a href="#" class="disabled btn btn-openid d-flex justify-content-center align-items-center" style="margin-top: 1.25rem;">
+						<span class="fab fa-openid mr-3" style="margin-right: 1rem;"></span> Login with OIDC
+					</a>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+@code {
+
+
+}

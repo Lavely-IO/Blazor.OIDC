@@ -1,29 +1,63 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Authors>josh@lavely.io</Authors>
+        <Company>LavelyIO</Company>
+        <PackageProjectUrl>https://github.com/Lavely-IO/Blazor.OIDC</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Lavely-IO/Blazor.OIDC.git</RepositoryUrl>
+        <Description>Quickly add OIDC authentication to your BlazorServer Apps. </Description>
+        <PackageIcon>logo.png</PackageIcon>
 
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
+        <!-- Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
 
-  <ItemGroup>
-    <PackageReference Include="IdentityModel" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.1" />
-    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.15.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.1" />
-  </ItemGroup>
+        <!-- Embed source files that are not tracked by the source control manager in the PDB -->
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
 
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Pages\Identity\" />
-  </ItemGroup>
+        <!-- Recommended: Embed symbols containing Source Link in the main file (exe/dll) -->
+        <DebugType>embedded</DebugType>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
 
+    <PropertyGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DebugType>embedded</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <IncludeSource>True</IncludeSource>
+        <IncludeSymbols>True</IncludeSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\media\logo.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="IdentityModel" Version="6.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.1" />
+        <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.15.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.1" />
+    </ItemGroup>
 
 
 </Project>

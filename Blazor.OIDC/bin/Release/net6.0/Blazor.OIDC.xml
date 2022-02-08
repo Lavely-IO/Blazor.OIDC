@@ -1,0 +1,728 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blazor.OIDC</name>
+    </assembly>
+    <members>
+        <member name="T:Blazor.OIDC.ClaimsExtensions">
+            <summary>
+                The claims extensions.
+            </summary>
+        </member>
+        <member name="M:Blazor.OIDC.ClaimsExtensions.GetClaim(System.Security.Claims.ClaimsPrincipal,System.String)">
+            <summary>
+                Gets an identity claim
+            </summary>
+            <param name="source">
+                The source.
+            </param>
+            <param name="type">
+                The type.
+            </param>
+            <returns>
+                Claim
+            </returns>
+        </member>
+        <member name="M:Blazor.OIDC.ClaimsExtensions.GetClaimValue(System.Security.Claims.ClaimsIdentity,System.String)">
+            <summary>
+                Adds or updates a identity claim
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazor.OIDC.ClaimsExtensions.SetClaim(System.Security.Claims.ClaimsIdentity,System.Security.Claims.Claim)">
+            <summary>
+                Adds or updates a identity claim
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazor.OIDC.ClaimsExtensions.SetClaimValue(System.Security.Claims.ClaimsIdentity,System.String,System.String)">
+            <summary>
+                Adds or updates a identity claim
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazor.OIDC.ClaimsExtensions.AddOrUpdateClaim(System.Security.Claims.ClaimsIdentity,System.String,System.Int64)">
+            <summary>
+                Adds or updates a identity claim
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazor.OIDC.ClaimsExtensions.AddOrUpdateClaim(System.Security.Claims.ClaimsIdentity,System.String,System.Nullable{System.Int64})">
+            <summary>
+                Adds or updates a identity claim
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Blazor.OIDC.ClaimType">
+            <summary>
+            Struct ClaimType
+            </summary>
+        </member>
+        <member name="P:Blazor.OIDC.ClaimType.AccessToken">
+            <summary>
+            Gets the access token.
+            </summary>
+            <value>The access token.</value>
+        </member>
+        <member name="P:Blazor.OIDC.ClaimType.RefreshToken">
+            <summary>
+            Gets the refresh token.
+            </summary>
+            <value>The refresh token.</value>
+        </member>
+        <member name="P:Blazor.OIDC.ClaimType.AccessTokenExpires">
+            <summary>
+            Gets the access token expires.
+            </summary>
+            <value>The access token expires.</value>
+        </member>
+        <member name="P:Blazor.OIDC.ClaimType.RefreshTokenExpires">
+            <summary>
+            Gets the refresh token expires.
+            </summary>
+            <value>The refresh token expires.</value>
+        </member>
+        <member name="T:Blazor.OIDC.Config.JwtKey">
+            <summary>
+            Class JwtKey.
+            </summary>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.kty">
+            <summary>
+            Gets or sets the kty.
+            </summary>
+            <value>The kty.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.use">
+            <summary>
+            Gets or sets the use.
+            </summary>
+            <value>The use.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.kid">
+            <summary>
+            Gets or sets the kid.
+            </summary>
+            <value>The kid.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.x5t">
+            <summary>
+            Gets or sets the X5T.
+            </summary>
+            <value>The X5T.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.n">
+            <summary>
+            Gets or sets the n.
+            </summary>
+            <value>The n.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.e">
+            <summary>
+            Gets or sets the e.
+            </summary>
+            <value>The e.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.x5c">
+            <summary>
+            Gets or sets the X5C.
+            </summary>
+            <value>The X5C.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKey.issuer">
+            <summary>
+            Gets or sets the issuer.
+            </summary>
+            <value>The issuer.</value>
+        </member>
+        <member name="T:Blazor.OIDC.Config.JwtKs">
+            <summary>
+            Class JwtKs.
+            </summary>
+        </member>
+        <member name="P:Blazor.OIDC.Config.JwtKs.Keys">
+            <summary>
+            Gets or sets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="T:Blazor.OIDC.Config.Oidc">
+            <summary>
+            Class Oidc.
+            </summary>
+        </member>
+        <member name="P:Blazor.OIDC.Config.Oidc.WellKnownConfiguration">
+            <summary>
+            Gets or sets the well known configuration.
+            </summary>
+            <value>The well known configuration.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.Oidc.JwtKs">
+            <summary>
+            Gets or sets the JWT ks.
+            </summary>
+            <value>The JWT ks.</value>
+        </member>
+        <member name="M:Blazor.OIDC.Config.Oidc.GetWellKnownConfigurationAsync(System.String)">
+            <summary>
+            Get well known configuration as an asynchronous operation.
+            </summary>
+            <param name="authority">The authority.</param>
+            <returns>A Task&lt;OidcWellKnown&gt; representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Blazor.OIDC.Config.Oidc.GetJwtKs(System.String)">
+            <summary>
+            Gets the JWT ks.
+            </summary>
+            <param name="authority">The authority.</param>
+            <returns>JwtKs.</returns>
+        </member>
+        <member name="M:Blazor.OIDC.Config.Oidc.UpdateTokenClaims(System.Security.Claims.ClaimsIdentity,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Updates the token claims.
+            </summary>
+            <param name="identity">The identity.</param>
+            <param name="authority">The authority.</param>
+            <param name="clientId">The client identifier.</param>
+            <param name="clientSecret">The client secret.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns>IIdentity.</returns>
+        </member>
+        <member name="T:Blazor.OIDC.Config.OidcConstants">
+            <summary>
+            Class OidcConstants.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Config.OidcConstants.AdditionalClaims">
+            <summary>
+            The additional claims
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Config.OidcConstants.ScopeOfflineAccess">
+            <summary>
+            The scope offline access
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Config.OidcConstants.ScopeProfile">
+            <summary>
+            The scope profile
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Config.OidcConstants.ScopeOpenId">
+            <summary>
+            The scope open identifier
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Config.OidcConstants.PolicyKey">
+            <summary>
+            The policy key
+            </summary>
+        </member>
+        <member name="T:Blazor.OIDC.Config.OidcWellKnown">
+            <summary>
+            Class OidcWellKnown.
+            </summary>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.authorization_endpoint">
+            <summary>
+            Gets or sets the authorization endpoint.
+            </summary>
+            <value>The authorization endpoint.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.token_endpoint">
+            <summary>
+            Gets or sets the token endpoint.
+            </summary>
+            <value>The token endpoint.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.token_endpoint_auth_methods_supported">
+            <summary>
+            Gets or sets the token endpoint authentication methods supported.
+            </summary>
+            <value>The token endpoint authentication methods supported.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.jwks_uri">
+            <summary>
+            Gets or sets the JWKS URI.
+            </summary>
+            <value>The JWKS URI.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.response_modes_supported">
+            <summary>
+            Gets or sets the response modes supported.
+            </summary>
+            <value>The response modes supported.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.subject_types_supported">
+            <summary>
+            Gets or sets the subject types supported.
+            </summary>
+            <value>The subject types supported.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.id_token_signing_alg_values_supported">
+            <summary>
+            Gets or sets the identifier token signing alg values supported.
+            </summary>
+            <value>The identifier token signing alg values supported.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.http_logout_supported">
+            <summary>
+            Gets or sets a value indicating whether [HTTP logout supported].
+            </summary>
+            <value><c>true</c> if [HTTP logout supported]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.frontchannel_logout_supported">
+            <summary>
+            Gets or sets a value indicating whether [frontchannel logout supported].
+            </summary>
+            <value><c>true</c> if [frontchannel logout supported]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.end_session_endpoint">
+            <summary>
+            Gets or sets the end session endpoint.
+            </summary>
+            <value>The end session endpoint.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.response_types_supported">
+            <summary>
+            Gets or sets the response types supported.
+            </summary>
+            <value>The response types supported.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.scopes_supported">
+            <summary>
+            Gets or sets the scopes supported.
+            </summary>
+            <value>The scopes supported.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.issuer">
+            <summary>
+            Gets or sets the issuer.
+            </summary>
+            <value>The issuer.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.claims_supported">
+            <summary>
+            Gets or sets the claims supported.
+            </summary>
+            <value>The claims supported.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.request_uri_parameter_supported">
+            <summary>
+            Gets or sets a value indicating whether [request URI parameter supported].
+            </summary>
+            <value><c>true</c> if [request URI parameter supported]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.tenant_region_scope">
+            <summary>
+            Gets or sets the tenant region scope.
+            </summary>
+            <value>The tenant region scope.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.cloud_instance_name">
+            <summary>
+            Gets or sets the name of the cloud instance.
+            </summary>
+            <value>The name of the cloud instance.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.cloud_graph_host_name">
+            <summary>
+            Gets or sets the name of the cloud graph host.
+            </summary>
+            <value>The name of the cloud graph host.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.msgraph_host">
+            <summary>
+            Gets or sets the msgraph host.
+            </summary>
+            <value>The msgraph host.</value>
+        </member>
+        <member name="P:Blazor.OIDC.Config.OidcWellKnown.rbac_url">
+            <summary>
+            Gets or sets the rbac URL.
+            </summary>
+            <value>The rbac URL.</value>
+        </member>
+        <member name="T:Blazor.OIDC.Constants">
+            <summary>
+            Class Constants.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.LoginHint">
+            <summary>
+            LoginHint.
+            Represents the preferred_username claim in the ID token.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.DomainHint">
+            <summary>
+            DomainHint.
+            Determined by the tenant Id.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Claims">
+            <summary>
+            Claims.
+            Determined from the signed-in user.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Bearer">
+            <summary>
+            Bearer.
+            Predominant type of access token used with OAuth 2.0.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.BlazorOidc">
+            <summary>
+            CertLynx
+            Configuration section name for CertLynx Authentication.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.KeyCloak">
+            <summary>
+            KeyCloak.
+            Configuration section name for KeyCloak.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.AzureAd">
+            <summary>
+            CertLynx.
+            Configuration section name for AzureAd.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.AzureAdB2C">
+            <summary>
+            AzureAdB2C.
+            Configuration section name for AzureAdB2C.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Scope">
+            <summary>
+            Scope.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.TenantDiscoveryEndpoint">
+            <summary>
+            The tenant discovery endpoint
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.ApiVersion">
+            <summary>
+            The API version
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Metadata">
+            <summary>
+            The metadata
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.PreferredNetwork">
+            <summary>
+            The preferred network
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.PreferredCache">
+            <summary>
+            The preferred cache
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Aliases">
+            <summary>
+            The aliases
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.AzureADIssuerMetadataUrl">
+            <summary>
+            The azure ad issuer metadata URL
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.FallbackAuthority">
+            <summary>
+            The fallback authority
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Version">
+            <summary>
+            The version
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.V1">
+            <summary>
+            The v1
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.V2">
+            <summary>
+            The v2
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.MsaTenantId">
+            <summary>
+            The msa tenant identifier
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Consumers">
+            <summary>
+            The consumers
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Organizations">
+            <summary>
+            The organizations
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Common">
+            <summary>
+            The common
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.ClientInfo">
+            <summary>
+            The client information
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.One">
+            <summary>
+            The one
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.MediaTypePksc12">
+            <summary>
+            The media type PKSC12
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.PersonalUserCertificateStorePath">
+            <summary>
+            The personal user certificate store path
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.UserAgent">
+            <summary>
+            The user agent
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.JwtSecurityTokenUsedToCallWebApi">
+            <summary>
+            The JWT security token used to call web API
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.PreferredUserName">
+            <summary>
+            The preferred user name
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.NameClaim">
+            <summary>
+            The name claim
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Consent">
+            <summary>
+            The consent
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.ConsentUrl">
+            <summary>
+            The consent URL
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Scopes">
+            <summary>
+            The scopes
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.ProposedAction">
+            <summary>
+            The proposed action
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.Authorization">
+            <summary>
+            The authorization
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.ApplicationJson">
+            <summary>
+            The application json
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.ISessionStore">
+            <summary>
+            The i session store
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.BlazorChallengeUri">
+            <summary>
+            The blazor challenge URI
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.UserReadScope">
+            <summary>
+            The user read scope
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.GraphBaseUrlV1">
+            <summary>
+            The graph base URL v1
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.TelemetryHeaderKey">
+            <summary>
+            The telemetry header key
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.Constants.IDWebSku">
+            <summary>
+            The identifier web sku
+            </summary>
+        </member>
+        <member name="T:Blazor.OIDC.Pages._HostModel">
+            <summary>
+            Class _HostModel.
+            Implements the <see cref="T:Microsoft.AspNetCore.Mvc.RazorPages.PageModel" />
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.RazorPages.PageModel" />
+        </member>
+        <member name="F:Blazor.OIDC.Pages._HostModel.Cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="M:Blazor.OIDC.Pages._HostModel.#ctor(Blazor.OIDC.State.CachedState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Blazor.OIDC.Pages._HostModel"/> class.
+            </summary>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:Blazor.OIDC.Pages._HostModel.OnGet">
+            <summary>Called when [get].</summary>
+            <returns>IActionResult.</returns>
+        </member>
+        <member name="M:Blazor.OIDC.Pages._HostModel.OnGetLogin">
+            <summary>
+            Called when [get login].
+            </summary>
+            <returns>IActionResult.</returns>
+        </member>
+        <member name="M:Blazor.OIDC.Pages._HostModel.OnGetLogout">
+            <summary>
+            Called when [get logout].
+            </summary>
+            <returns> void </returns>
+        </member>
+        <member name="T:Blazor.OIDC.Services.ServiceCollectionExtensions">
+            <summary>
+                The Blazor OIDC service collection extensions.
+            </summary>
+        </member>
+        <member name="M:Blazor.OIDC.Services.ServiceCollectionExtensions.AddBlazorOidc(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+                Initialize OIDC as a Singleton
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">configuration</param>
+            <returns>IServiceCollection</returns>
+        </member>
+        <member name="T:Blazor.OIDC.State.AuthState">
+            <summary>
+            Class AuthState.
+            Implements the <see cref="T:Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider" />
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider" />
+            <remarks>lavely.io</remarks>
+        </member>
+        <member name="F:Blazor.OIDC.State.AuthState.Cache">
+            <summary>
+            The cache.
+            </summary>
+        </member>
+        <member name="M:Blazor.OIDC.State.AuthState.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,Blazor.OIDC.State.CachedState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Blazor.OIDC.State.AuthState" /> class.
+            </summary>
+            <param name="loggerFactory">The logger factory.</param>
+            <param name="cache">The cache.</param>
+            <remarks>lavely.io</remarks>
+        </member>
+        <member name="P:Blazor.OIDC.State.AuthState.RevalidationInterval">
+            <summary>
+            The revalidation interval.
+            </summary>
+            <value>The revalidation interval.</value>
+            <remarks>lavely.io</remarks>
+        </member>
+        <member name="M:Blazor.OIDC.State.AuthState.ValidateAuthenticationStateAsync(Microsoft.AspNetCore.Components.Authorization.AuthenticationState,System.Threading.CancellationToken)">
+            <summary>
+            The validate authentication state async.
+            </summary>
+            <param name="authenticationState">The authentication state.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" />.</returns>
+            <remarks>lavely.io</remarks>
+        </member>
+        <member name="T:Blazor.OIDC.State.CachedState">
+            <summary>
+            Class CachedState.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.State.CachedState.Cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="M:Blazor.OIDC.State.CachedState.HasSubjectId(System.String)">
+            <summary>
+            Determines whether [has subject identifier] [the specified subject identifier].
+            </summary>
+            <param name="subjectId">The subject identifier.</param>
+            <returns><c>true</c> if [has subject identifier] [the specified subject identifier]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Blazor.OIDC.State.CachedState.Add(System.String,System.DateTimeOffset,System.String,System.String)">
+            <summary>
+            Adds the specified subject identifier.
+            </summary>
+            <param name="subjectId">The subject identifier.</param>
+            <param name="expiration">The expiration.</param>
+            <param name="accessToken">The access token.</param>
+            <param name="refreshToken">The refresh token.</param>
+        </member>
+        <member name="M:Blazor.OIDC.State.CachedState.Get(System.String)">
+            <summary>
+            Gets the specified subject identifier.
+            </summary>
+            <param name="subjectId">The subject identifier.</param>
+            <returns>TokenState.</returns>
+        </member>
+        <member name="M:Blazor.OIDC.State.CachedState.Remove(System.String)">
+            <summary>
+            Removes the specified subject identifier.
+            </summary>
+            <param name="subjectId">The subject identifier.</param>
+        </member>
+        <member name="T:Blazor.OIDC.State.TokenState">
+            <summary>
+            Class TokenState.
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.State.TokenState.AccessToken">
+            <summary>
+            The access token
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.State.TokenState.Expiration">
+            <summary>
+            The expiration
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.State.TokenState.RefreshToken">
+            <summary>
+            The refresh token
+            </summary>
+        </member>
+        <member name="F:Blazor.OIDC.State.TokenState.SubjectId">
+            <summary>
+            The subject identifier
+            </summary>
+        </member>
+    </members>
+</doc>

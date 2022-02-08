@@ -3,9 +3,10 @@
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-	Layout = null;
+	Layout = "_Layout";
 }
 
+@using Blazor.OIDC.Components
 @model Blazor.OIDC.Pages._HostModel
 
 @if (User.Identity.IsAuthenticated)
@@ -14,10 +15,6 @@
 }
 else
 {
-	<h3>You are not logged into this application.</h3>
 
-	<p>
-		@* ReSharper restore CSharpWarnings::CS8602 *@
-		<a href="~/Login">Login</a>
-	</p>
+	<component type="typeof(LoginWithProviders)" render-mode="ServerPrerendered" />
 }

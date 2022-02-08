@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.OIDC", "Blazor.OIDC\Blazor.OIDC.csproj", "{C41E2158-AF3D-4467-83E3-8008FF6CB8A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.OIDC", "Blazor.OIDC\Blazor.OIDC.csproj", "{C41E2158-AF3D-4467-83E3-8008FF6CB8A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.OIDC.Example", "Blazor.OIDC.Example\Blazor.OIDC.Example.csproj", "{A9754225-A429-4183-A136-3B9C2EC6D689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.OIDC.Example", "Blazor.OIDC.Example\Blazor.OIDC.Example.csproj", "{A9754225-A429-4183-A136-3B9C2EC6D689}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AED90417-E74F-4330-8803-FC22A076560A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

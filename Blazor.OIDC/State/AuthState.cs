@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// lavely.io
+
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server;
+using Microsoft.Extensions.Logging;
 
 namespace Blazor.OIDC.State
 {
-    using Blazor.OIDC;
-    using Microsoft.AspNetCore.Components.Authorization;
-    using Microsoft.AspNetCore.Components.Server;
-    using Microsoft.Extensions.Logging;
-
+    /// <summary>
+    /// Class AuthState.
+    /// Implements the <see cref="Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider" />
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider" />
+    /// <remarks>lavely.io</remarks>
     public class AuthState : RevalidatingServerAuthenticationStateProvider
     {
         /// <summary>
@@ -19,14 +20,11 @@ namespace Blazor.OIDC.State
         private readonly CachedState Cache;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AuthState"/> class.
+        /// Initializes a new instance of the <see cref="AuthState" /> class.
         /// </summary>
-        /// <param name="loggerFactory">
-        /// The logger factory.
-        /// </param>
-        /// <param name="cache">
-        /// The cache.
-        /// </param>
+        /// <param name="loggerFactory">The logger factory.</param>
+        /// <param name="cache">The cache.</param>
+        /// <remarks>lavely.io</remarks>
         public AuthState(
             ILoggerFactory loggerFactory,
             CachedState cache)
@@ -38,30 +36,28 @@ namespace Blazor.OIDC.State
         /// <summary>
         /// The revalidation interval.
         /// </summary>
+        /// <value>The revalidation interval.</value>
+        /// <remarks>lavely.io</remarks>
         protected override TimeSpan RevalidationInterval
             => TimeSpan.FromSeconds(10); // TODO read from ConfigurationSection
 
         /// <summary>
         /// The validate authentication state async.
         /// </summary>
-        /// <param name="authenticationState">
-        /// The authentication state.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// The cancellation token.
-        /// </param>
-        /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
-        protected override Task<bool> ValidateAuthenticationStateAsync(AuthenticationState authenticationState, CancellationToken cancellationToken)
+        /// <param name="authenticationState">The authentication state.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The <see cref="Task" />.</returns>
+        /// <remarks>lavely.io</remarks>
+        protected override Task<bool> ValidateAuthenticationStateAsync(AuthenticationState authenticationState,
+            CancellationToken cancellationToken)
         {
             var sid = authenticationState.User.GetClaim("sid").Value;
             var email = authenticationState.User.GetClaim("email").Value;
             var name = authenticationState.User.GetClaim("name").Value;
 
-            if (this.Cache.HasSubjectId(sid))
+            if (Cache.HasSubjectId(sid))
             {
-                var data = this.Cache.Get(sid);
+                var data = Cache.Get(sid);
 
                 System.Diagnostics.Debug.WriteLine($"NowUtc: {DateTimeOffset.UtcNow:o}");
                 System.Diagnostics.Debug.WriteLine($"ExpUtc: {data.Expiration:o}");
@@ -72,7 +68,7 @@ namespace Blazor.OIDC.State
                 }
 
                 System.Diagnostics.Debug.WriteLine($"Claim Status: EXPIRED");
-                this.Cache.Remove(sid);
+                Cache.Remove(sid);
                 return Task.FromResult(false);
             }
             else
